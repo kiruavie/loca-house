@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import houseList from "@/assets/datas/datas-appartement.json";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const home: React.FC = () => {
   return (
@@ -40,6 +41,24 @@ const home: React.FC = () => {
                 </View>
               </View>
             </ImageBackground>
+            <View style={styles.rowBetween}>
+              <Text style={{ fontSize: 25 }}>{item.location_city}</Text>
+              <View style={styles.tagContainer}>
+                <Text style={styles.tagStar}>
+                  {item.propriétaire.totalStars}.00{" "}
+                  <FontAwesome name="star" size={18} color="orange" />
+                </Text>
+              </View>
+            </View>
+            <View style={styles.rowBetween}>
+              <Text style={{ fontSize: 25, color: "gray" }}>
+                ${item.month_price}
+              </Text>
+              <View style={styles.tagContainer}>
+                <FontAwesome name="user" size={18} color="orange" />
+                <Text style={styles.tagStar}>3 visiteurs</Text>
+              </View>
+            </View>
           </View>
         )}
       />
@@ -80,6 +99,23 @@ const styles = StyleSheet.create({
   },
   tagText: {
     color: "white",
+  },
+  rowBetween: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  tagStar: {
+    fontSize: 18,
+    color: "white",
+  },
+  tagContainer: {
+    backgroundColor: "gray",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    borderRadius: 5,
+    padding: 5,
   },
 });
 
