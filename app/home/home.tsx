@@ -41,7 +41,7 @@ const home: React.FC = () => {
                 </View>
               </View>
             </ImageBackground>
-            <View style={styles.rowBetween}>
+            <View style={[styles.rowBetween, styles.mt1]}>
               <Text style={{ fontSize: 25 }}>{item.location_city}</Text>
               <View style={styles.tagContainer}>
                 <Text style={styles.tagStar}>
@@ -52,7 +52,7 @@ const home: React.FC = () => {
             </View>
             <View style={styles.rowBetween}>
               <Text style={{ fontSize: 25, color: "gray" }}>
-                ${item.month_price}
+                ${item.month_price}/mois
               </Text>
               <View style={styles.tagContainer}>
                 <FontAwesome name="user" size={18} color="orange" />
@@ -116,6 +116,9 @@ const styles = StyleSheet.create({
     gap: 5,
     borderRadius: 5,
     padding: 5,
+  },
+  mt1: {
+    marginTop: 10,
   },
 });
 
